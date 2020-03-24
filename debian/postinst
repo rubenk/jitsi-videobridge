@@ -182,10 +182,6 @@ case "$1" in
         # OpenVZ containers do not typically allow permission to modify the
         # kernel with sysctl config values.
         sysctl --system || true
-
-        if [ -d /run/systemd/system ]; then
-            systemctl start jitsi-videobridge2.service >/dev/null || true
-        fi
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

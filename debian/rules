@@ -32,4 +32,6 @@ override_dh_installinit:
 	dh_installinit --noscripts
 
 override_dh_auto_install:
-	# do nothing
+	dh_auto_install
+	dh_systemd_enable || true
+	dh_systemd_start || true
